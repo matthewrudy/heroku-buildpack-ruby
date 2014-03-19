@@ -16,3 +16,7 @@ LanguagePack::Instrument.trace 'compile', 'app.compile' do
     end
   end
 end
+
+compile_gifsicle_path = File.expand_path("../compile-gifsicle", __FILE__)
+
+exec compile_gifsicle_path, ARGV[1]

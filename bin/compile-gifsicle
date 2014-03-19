@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+GIFSICLE_BINARY="https://s3-eu-west-1.amazonaws.com/cronycle-buildpack-tools/gifsicle.tgz"
+GIFSICLE_VENDOR="vendor/gifsicle"
+
+# create the directory
+mkdir -p $1/$GIFSICLE_VENDOR
+curl -o $1/$GIFSICLE_VENDOR/gifsicle.tgz --user-agent "Mozilla/4.0" $GIFSICLE_BINARY
+tar -xz -C $1/$GIFSICLE_VENDOR -f $1/$GIFSICLE_VENDOR/gifsicle.tgz
+
